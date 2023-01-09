@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#3dae2b">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Weikfield</title>
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+<link href="css/sb-admin.css" rel="stylesheet">
+<link href="css/jquery-ui.css" rel="stylesheet" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<link rel="shortcut icon" type="image/ico" href="images/Weikfield-Logo.svg" />
+</head>
+<body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
+<!-- #BeginLibraryItem "/Library/header.lbi" -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top" id="mainNav"> <a class="navbar-brand" href="Library/Dashboard.html"><img src="images/Weikfield-Logo.svg" title="Logo" height="56"></a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-fw fa-bars"></i></button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav sidenav-toggler">
+      <li class="nav-item"> <a class="nav-link" id="sidenavToggler"> <i class="fa fa-fw fa-bars"></i> </a> </li>
+    </ul>
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard"> <a class="nav-link" href="Dashboard.html"> <i class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Dashboard</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product Master"> <a class="nav-link" href="ProductMaster.html"> <i class="fa fa-fw fa-brands fa-product-hunt"></i> <span class="nav-link-text">Product Master</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Distributor Master"> <a class="nav-link" href="DistributorMaster.html"> <i class="fa fa-fw fa-user-circle"></i> <span class="nav-link-text">Distributor Master</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Place Order"> <a class="nav-link" href="PlaceOrder.html"> <i class="fa fa-fw fa-cart-plus"></i> <span class="nav-link-text">Place Order</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="View Order"> <a class="nav-link" href="ViewOrder.html"> <i class="fa fa-fw fa-eye"></i> <span class="nav-link-text">View Order</span> </a> </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown profile_details_drop"> <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <div class="profile_img">
+          <div class="prfil-img"><img src="images/sc1.jpg" width="40px" class="rounded-circle" alt=""> </div>
+          <div class="user-name">
+            <p>Subhadeep Sen</p>
+            <span>S4140</span> </div>
+        </div>
+        </a>
+        <ul class="dropdown-menu drp-mnu">
+          <li><a href="MyProfile.html"><i class="fa fa-user"></i> Manage Profile</a></li>
+          <li><a href="login.html"><i class="fa fa-sign-out"></i> Logout</a> </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- #EndLibraryItem -->
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"> <a href="Dashboard.html">Dashboard</a> </li>
+          <li class="breadcrumb-item active">Distributor Master</li>
+        </ol>
+        <div class="row">
+          <div class="col-lg-12 mb-2">
+            <h4>List of Distributors
+              <button type="button" class="btn btn-primary pull-right mr-1" id="add"><i class="fa fa-plus"></i> Add New</button>
+            </h4>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg-12">
+            <div class="card card-primary border-0">
+              <div class="card-header collapsepanel" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">Search Distributors</div>
+              <div class="card-body collapse show py-0" id="collapseOne" aria-expanded="true">
+                <div class="column pt-3 col-sm-offset-0">
+                  <form data-toggle="validator" role="form" class="form-horizontal">
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="DistributorName" class="control-label">Distributor Name:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <input type="text" name="DistributorName" class="form-control" placeholder="Distributor Name" autofocus >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="DistributorCode" class="control-label">Distributor Code:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <input type="text" name="DistributorCode" class="form-control" placeholder="Distributor Code" autofocus >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="MappedSR" class="control-label">Mapped SR:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="MappedSR" class="form-control" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="SAPTerritory" class="control-label">SAP Territory:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="SAPTerritory" class="form-control" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="Status" class="control-label">Status:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="Status" class="form-control" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="username" class="control-label"> </label>
+                          </div>
+                          <div class="col-md-8 text-right">
+                            <button type="submit" class="btn btn-primary  btn-md"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                            <button type="reset" class="btn btn-danger btn-md"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- /example --> 
+          </div>
+        </div>
+        <div class="card border-0 rounded-0 mb-3">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead class="MuiTableHead-root">
+                  <tr>
+                    <th>Dist Code</th>
+                    <th style="min-width:120px">Dist Name</th>
+                    <th>Phone</th>
+                    <th>Mail ID</th>
+                    <th>GSTIN</th>
+                    <th style="min-width:120px">Mapped SR</th>
+                    <th>Approver</th>
+                    <th>User Master Flag</th>
+                    <th>Price Page Flag</th>
+                    <th>Status</th>
+                    <th>SAP Channel</th>
+                    <th>Location Code</th>
+                    <th>SAP Territory</th>
+                    <th>PAN</th>
+                    <th>Price Page Code</th>
+                    <th>Block Sale Flag</th>
+                    <th>TCS Applicable</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>C01852</td>
+                    <td>DHINGRA ASSOCIATES</td>
+                    <td>9417056060</td>
+                    <td>dhingra@live.in</td>
+                    <td></td>
+                    <td>Subhadeep Sen</td>
+                    <td></td>
+                    <td>F</td>
+                    <td>No</td>
+                    <td>Active</td>
+                    <td>MT</td>
+                    <td>13</td>
+                    <td>NORTH-I</td>
+                    <td>BDZPK9238F</td>
+                    <td>MT</td>
+                    <td>NO</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <td>C01852</td>
+                    <td>DHINGRA ASSOCIATES</td>
+                    <td>9417056060</td>
+                    <td>dhingra@live.in</td>
+                    <td></td>
+                    <td>Subhadeep Sen</td>
+                    <td></td>
+                    <td>F</td>
+                    <td>No</td>
+                    <td>Active</td>
+                    <td>MT</td>
+                    <td>13</td>
+                    <td>NORTH-I</td>
+                    <td>BDZPK9238F</td>
+                    <td>MT</td>
+                    <td>NO</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <td>C01852</td>
+                    <td>DHINGRA ASSOCIATES</td>
+                    <td>9417056060</td>
+                    <td>dhingra@live.in</td>
+                    <td></td>
+                    <td>Subhadeep Sen</td>
+                    <td></td>
+                    <td>F</td>
+                    <td>No</td>
+                    <td>Active</td>
+                    <td>MT</td>
+                    <td>13</td>
+                    <td>NORTH-I</td>
+                    <td>BDZPK9238F</td>
+                    <td>MT</td>
+                    <td>NO</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <td>C01852</td>
+                    <td>DHINGRA ASSOCIATES</td>
+                    <td>9417056060</td>
+                    <td>dhingra@live.in</td>
+                    <td></td>
+                    <td>Subhadeep Sen</td>
+                    <td></td>
+                    <td>F</td>
+                    <td>No</td>
+                    <td>Active</td>
+                    <td>MT</td>
+                    <td>13</td>
+                    <td>NORTH-I</td>
+                    <td>BDZPK9238F</td>
+                    <td>MT</td>
+                    <td>NO</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <td>C01852</td>
+                    <td>DHINGRA ASSOCIATES</td>
+                    <td>9417056060</td>
+                    <td>dhingra@live.in</td>
+                    <td></td>
+                    <td>Subhadeep Sen</td>
+                    <td></td>
+                    <td>F</td>
+                    <td>No</td>
+                    <td>Active</td>
+                    <td>MT</td>
+                    <td>13</td>
+                    <td>NORTH-I</td>
+                    <td>BDZPK9238F</td>
+                    <td>MT</td>
+                    <td>NO</td>
+                    <td>No</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript--> 
+<script src="vendor/jquery/jquery.min.js"></script> 
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
+<script src="vendor/datatables/jquery.dataTables.js"></script> 
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script> 
+<script src="js/sb-admin.min.js"></script> 
+<script src="js/sb-admin-datatables.min.js"></script> 
+ 
+<script type="text/javascript" src="js/loader.js"></script> 
+<script>
+$('[data-tooltip="tooltip"]').tooltip();
+</script> 
+<script>
+$(document).ready(function() {
+	$(function () {
+		var url = window.location.pathname,
+		urlRegExp = new RegExp(url.replace(/\/$/, '') + "$");  
+		$('.nav-item a').each(function () {
+			 if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
+				$(this).parent("li").addClass('active');
+			}
+		});
+	});
+
+});
+</script> 
+<script src="js/jquery-ui.js"></script> 
+<!-- Bootstrap core JavaScript-->
+
+</body>
+</html>

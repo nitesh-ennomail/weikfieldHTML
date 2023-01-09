@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#3dae2b">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Weikfield</title>
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+<link href="css/sb-admin.css" rel="stylesheet">
+<link href="css/jquery-ui.css" rel="stylesheet" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<link rel="shortcut icon" type="image/ico" href="images/Weikfield-Logo.svg" />
+</head>
+<body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
+<!-- #BeginLibraryItem "/Library/header.lbi" -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top" id="mainNav"> <a class="navbar-brand" href="Library/Dashboard.html"><img src="images/Weikfield-Logo.svg" title="Logo" height="56"></a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-fw fa-bars"></i></button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav sidenav-toggler">
+      <li class="nav-item"> <a class="nav-link" id="sidenavToggler"> <i class="fa fa-fw fa-bars"></i> </a> </li>
+    </ul>
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard"> <a class="nav-link" href="Dashboard.html"> <i class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Dashboard</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product Master"> <a class="nav-link" href="ProductMaster.html"> <i class="fa fa-fw fa-brands fa-product-hunt"></i> <span class="nav-link-text">Product Master</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Distributor Master"> <a class="nav-link" href="DistributorMaster.html"> <i class="fa fa-fw fa-user-circle"></i> <span class="nav-link-text">Distributor Master</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Place Order"> <a class="nav-link" href="PlaceOrder.html"> <i class="fa fa-fw fa-cart-plus"></i> <span class="nav-link-text">Place Order</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="View Order"> <a class="nav-link" href="ViewOrder.html"> <i class="fa fa-fw fa-eye"></i> <span class="nav-link-text">View Order</span> </a> </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown profile_details_drop"> <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <div class="profile_img">
+          <div class="prfil-img"><img src="images/sc1.jpg" width="40px" class="rounded-circle" alt=""> </div>
+          <div class="user-name">
+            <p>Subhadeep Sen</p>
+            <span>S4140</span> </div>
+        </div>
+        </a>
+        <ul class="dropdown-menu drp-mnu">
+          <li><a href="MyProfile.html"><i class="fa fa-user"></i> Manage Profile</a></li>
+          <li><a href="login.html"><i class="fa fa-sign-out"></i> Logout</a> </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- #EndLibraryItem -->
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"> <a href="Dashboard.html">Dashboard</a> </li>
+          <li class="breadcrumb-item active">Place Order</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row mb-3">
+          <div class="col-lg-12">
+            <div class="card card-primary border-0">
+              <div class="card-header collapsepanel" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">Search Products</div>
+              <div class="card-body collapse show py-0" id="collapseOne" aria-expanded="true">
+                <div class="column pt-3 col-sm-offset-0">
+                  <form data-toggle="validator" role="form" class="form-horizontal">
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="Distributor" class="control-label">Distributor:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="Distributor" class="form-control" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="SalePerson" class="control-label">Sale Person:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <input type="text" name="SalePerson" class="form-control" value="Subhadeep Sen" readonly >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="SalePerson" class="control-label">Pack Type:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="lbl-radio-group d-flex">
+                              <div class="lbl-radio-btn flex-fill">
+                                <input type="radio" value="0" id="proSale" name="Pro-type">
+                                <label for="proSale">Consumer</label>
+                              </div>
+                              <div class="lbl-radio-btn flex-fill">
+                                <input type="radio" value="0" id="proRent" name="Pro-type">
+                                <label for="proRent">Institution</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="ProductFamily" class="control-label">Brand:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="ProductFamily" class="form-control d-none d-sm-block" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                            <div class="lbl-radio-group hrl-scrl-rdo d-block d-sm-none">
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option01" name="brandRdoGrp">
+                                <label for="Option01">Option 01</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option02" name="brandRdoGrp">
+                                <label for="Option02">Option 02</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option03" name="brandRdoGrp">
+                                <label for="Option03">Option 03</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option04" name="brandRdoGrp">
+                                <label for="Option04">Option 04</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option05" name="brandRdoGrp">
+                                <label for="Option05">Option 05</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option06" name="brandRdoGrp">
+                                <label for="Option06">Option 06</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option07" name="brandRdoGrp">
+                                <label for="Option07">Option 07</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option08" name="brandRdoGrp">
+                                <label for="Option08">Option 08</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option09" name="brandRdoGrp">
+                                <label for="Option09">Option 09</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option10" name="brandRdoGrp">
+                                <label for="Option10">Option 10</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option11" name="brandRdoGrp">
+                                <label for="Option11">Option 11</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option12" name="brandRdoGrp">
+                                <label for="Option12">Option 12</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option13" name="brandRdoGrp">
+                                <label for="Option13">Option 13</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option14" name="brandRdoGrp">
+                                <label for="Option14">Option 14</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option15" name="brandRdoGrp">
+                                <label for="Option15">Option 15</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option16" name="brandRdoGrp">
+                                <label for="Option16">Option 16</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option17" name="brandRdoGrp">
+                                <label for="Option17">Option 17</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option18" name="brandRdoGrp">
+                                <label for="Option18">Option 18</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option19" name="brandRdoGrp">
+                                <label for="Option19">Option 19</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option20" name="brandRdoGrp">
+                                <label for="Option20">Option 20</label>
+                              </div>
+                              <div class="lbl-radio-btn">
+                                <input type="radio" value="0" id="Option21" name="brandRdoGrp">
+                                <label for="Option21">Option 21</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="ProductClass" class="control-label">Product Line:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="ProductClass" class="form-control" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="ProductClass" class="control-label">Flavour:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="ProductClass" class="form-control" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- /example --> 
+          </div>
+        </div>
+        <div class="card border-0 rounded-0 mb-3">
+          <div class="card-body">
+            <div class="table-responsive d-none d-sm-block">
+              <table class="table table-bordered" id="dataTables1" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Parent Code</th>
+                    <th>Parent Code Desc</th>
+                    <th>BO Qty</th>
+                    <th>W/H Stock</th>
+                    <th>Price</th>
+                    <th>UOM</th>
+                    <th>Qty</th>
+                    <th>Total Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Data 22</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td><input type="number" class="qty-ctl" step="1" value=""></td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td><input type="number" class="qty-ctl" step="1" value=""></td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td><input type="number" class="qty-ctl" step="1" value=""></td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td><input type="number" class="qty-ctl" step="1" value=""></td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td><input type="number" class="qty-ctl" step="1" value=""></td>
+                    <td>Data</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cart-prod-list d-block d-sm-none">
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-white">
+            <div class="row">
+              <div class="col-md-3 mb-3 d-none d-sm-block">
+                <button type="button" class="btn btn-block btn-primary btn-md"><i class="fas fa-cart-shopping mr-2"></i> Add to Cart</button>
+              </div>
+              <div class="col-md-6 text-center">
+                <div class="form-group mb-2"> <span class="pr-4"><i class="fas fa-flag text-success  mr-2"></i>New Launch</span> <span class="pr-4"><i class="fas fa-flag text-info mr-2"></i> Promo</span> <span class="pr-4"><i class="fas fa-flag  mr-2"></i> Balance SKU's </span> </div>
+              </div>
+              <div class="col-md-3 d-none d-sm-block">
+                <h4 class="m-0 text-success  text-center">Total: 0.00</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-none d-sm-block">
+        <div class="card card-primary border-0 rounded-0 mb-3">
+          <div class="card-header">Order Summary</div>
+          <div class="card-body">
+            <div class="cart-prod-list scroll">
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+              <div class="cart-prod-div">
+                <div class="cart-prod-title">Macaroni - FG -8114044</div>
+                <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+                <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+                <div class="cart-prod-qty">
+                  <input type="number" class="qty-ctl" step="1" value="3">
+                </div>
+              </div>
+            </div>
+            <p class="text-center m-0 font-weight-bold">Total Unit: <span class="text-danger">12</span></p>
+            <h1 class="text-center text-success">₹599.00</h1>
+            <button type="button" class="btn btn-primary btn-block btn-lg my-3">Place Order <i class="fa-solid fa-circle-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="atc-footer-mobile d-block d-sm-none">
+  <div class="atcm-button-group"> <a href="#modalshowcart" class="atcm-total-amount"  data-toggle="modal"><span class="atcm-icon"><i class="fas fa-cart-shopping mr-2"></i></span><span class="atcm-text"><span class="atc-unit">Unit: 5</span><span class="atc-total">₹599.00</span></span></a> <a href="#" class="atcm-place-order"><span>Place Order</span><i class="fa-solid fa-circle-arrow-right"></i></a> </div>
+</div>
+<div class="modal bd-example-modal-lg fade" id="modalshowcart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ORDER SUMMARY</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+      </div>
+      <div class="modal-body">
+        <div class="cart-prod-list">
+          <div class="cart-prod-div">
+            <div class="cart-prod-title">Macaroni - FG -8114044</div>
+            <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+            <div class="cart-prod-qty">
+              <input type="number" class="qty-ctl" step="1" value="3">
+            </div>
+          </div>
+          <div class="cart-prod-div">
+            <div class="cart-prod-title">Macaroni - FG -8114044</div>
+            <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+            <div class="cart-prod-qty">
+              <input type="number" class="qty-ctl" step="1" value="3">
+            </div>
+          </div>
+          <div class="cart-prod-div">
+            <div class="cart-prod-title">Macaroni - FG -8114044</div>
+            <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+            <div class="cart-prod-qty">
+              <input type="number" class="qty-ctl" step="1" value="3">
+            </div>
+          </div>
+          <div class="cart-prod-div">
+            <div class="cart-prod-title">Macaroni - FG -8114044</div>
+            <div class="cart-prod-desc"><span class="cart-prod-val">CHEF'S BASKET-PASTA-MACARONI-POUCH-60X180gm</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Physical Inventory: </span><span class="cart-prod-val">20</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Allocate Qty: </span><span class="cart-prod-val">5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Price: </span><span class="cart-prod-val">2222.5</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">UOM: </span><span class="cart-prod-val">Case</span></div>
+            <div class="cart-prod-desc"><span class="cart-prod-lbl">Schemes: </span><span class="cart-prod-val">Buy 5 case Get 1 Case Free</span></div>
+            <div class="cart-prod-qty">
+              <input type="number" class="qty-ctl" step="1" value="3">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="atcm-button-group"> <a href="#" class="atcm-total-amount"><span class="atcm-icon"><i class="fas fa-cart-shopping mr-2"></i></span><span class="atcm-text"><span class="atc-unit">Unit: 5</span><span class="atc-total">₹599.00</span></span></a> <a href="#" class="atcm-place-order"><span>Place Order</span><i class="fa-solid fa-circle-arrow-right"></i></a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript--> 
+<script src="vendor/jquery/jquery.min.js"></script> 
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
+<script src="vendor/datatables/jquery.dataTables.js"></script> 
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script> 
+<script src="vendor/datatables/dataTables.fixedHeader.js"></script> 
+<script src="js/sb-admin.min.js"></script> 
+<script src="js/sb-admin-datatables.min.js"></script> 
+<script type="text/javascript" src="js/loader.js"></script> 
+<script>
+$('[data-tooltip="tooltip"]').tooltip();
+</script> 
+<script>
+$(document).ready(function() {
+$("#dataTables1").dataTable({
+		"ordering": false,
+        "info":     false,
+		"searching": false,
+		"lengthChange": false,
+		"paging": false,
+		scrollY: '370px',
+        scrollCollapse: true,
+        paging: false,
+});
+	$(function () {
+		var url = window.location.pathname,
+		urlRegExp = new RegExp(url.replace(/\/$/, '') + "$");  
+		$('.nav-item a').each(function () {
+			 if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
+				$(this).parent("li").addClass('active');
+			}
+		});
+	});
+});
+</script> 
+<script src="js/jquery-ui.js"></script>
+</body>
+</html>

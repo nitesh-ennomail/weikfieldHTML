@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#3dae2b">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Weikfield</title>
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+<link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+<link href="css/sb-admin.css" rel="stylesheet">
+<link href="css/jquery-ui.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/bootstrap-select.min.css">
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<link rel="shortcut icon" type="image/ico" href="images/Weikfield-Logo.svg" />
+</head>
+<body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
+<!-- #BeginLibraryItem "/Library/header.lbi" -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top" id="mainNav"> <a class="navbar-brand" href="Library/Dashboard.html"><img src="images/Weikfield-Logo.svg" title="Logo" height="56"></a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-fw fa-bars"></i></button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav sidenav-toggler">
+      <li class="nav-item"> <a class="nav-link" id="sidenavToggler"> <i class="fa fa-fw fa-bars"></i> </a> </li>
+    </ul>
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard"> <a class="nav-link" href="Dashboard.html"> <i class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Dashboard</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product Master"> <a class="nav-link" href="ProductMaster.html"> <i class="fa fa-fw fa-brands fa-product-hunt"></i> <span class="nav-link-text">Product Master</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Distributor Master"> <a class="nav-link" href="DistributorMaster.html"> <i class="fa fa-fw fa-user-circle"></i> <span class="nav-link-text">Distributor Master</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Place Order"> <a class="nav-link" href="PlaceOrder.html"> <i class="fa fa-fw fa-cart-plus"></i> <span class="nav-link-text">Place Order</span> </a> </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="View Order"> <a class="nav-link" href="ViewOrder.html"> <i class="fa fa-fw fa-eye"></i> <span class="nav-link-text">View Order</span> </a> </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown profile_details_drop"> <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <div class="profile_img">
+          <div class="prfil-img"><img src="images/sc1.jpg" width="40px" class="rounded-circle" alt=""> </div>
+          <div class="user-name">
+            <p>Subhadeep Sen</p>
+            <span>S4140</span> </div>
+        </div>
+        </a>
+        <ul class="dropdown-menu drp-mnu">
+          <li><a href="MyProfile.html"><i class="fa fa-user"></i> Manage Profile</a></li>
+          <li><a href="login.html"><i class="fa fa-sign-out"></i> Logout</a> </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- #EndLibraryItem -->
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"> <a href="Dashboard.html">Dashboard</a> </li>
+          <li class="breadcrumb-item active">View Order</li>
+        </ol>
+        <div class="row">
+          <div class="col-lg-12 mb-2">
+            <h4>List of Oders</h4>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg-12">
+            <div class="card card-primary border-0">
+              <div class="card-header collapsepanel" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">Search Orders</div>
+              <div class="card-body collapse show py-0" id="collapseOne" aria-expanded="true">
+                <div class="column pt-3 col-sm-offset-0">
+                  <form data-toggle="validator" role="form" class="form-horizontal">
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="OrderNumber" class="control-label">Order Number:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <input type="text" name="OrderNumber" class="form-control" placeholder="Order Number" autofocus >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="DistributorName" class="control-label">Distributor Name:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="DistributorName" class="form-control selectpicker" data-live-search="true" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="dateFrom" class="control-label">Date From:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <input type="text" name="dateFrom" class="form-control datepicker" placeholder="Date From" autofocus >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="dateTo" class="control-label">Date To:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <input type="text" name="dateTo" class="form-control datepicker" placeholder="Date From" autofocus >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="OrderStatus" class="control-label">Status:</label>
+                          </div>
+                          <div class="col-md-8">
+                            <select name="OrderStatus" class="form-control" required>
+                              <option>Show All</option>
+                              <option value="1">Option 01</option>
+                              <option value="2">Option 02</option>
+                              <option value="3">Option 03</option>
+                              <option value="4">Option 04</option>
+                              <option value="4">Option 05</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label for="username" class="control-label"> </label>
+                          </div>
+                          <div class="col-md-8 text-right">
+                            <button type="submit" class="btn btn-primary  btn-md"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                            <button type="reset" class="btn btn-danger btn-md"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- /example --> 
+          </div>
+        </div>
+        <div class="card border-0 rounded-0 mb-3">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Order No</th>
+                    <th>Order Date</th>
+                    <th>Distributor Name</th>
+                    <th>Order Qty</th>
+                    <th>Order Amount</th>
+                    <th>Invoice Qty</th>
+                    <th>Invoice Amount</th>
+                    <th style="min-width:120px">Status</th>
+                    <th>ERP Ref No.</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Order No</th>
+                    <th>Order Date</th>
+                    <th>Distributor Name</th>
+                    <th>Order Qty</th>
+                    <th>Order Amount</th>
+                    <th>Invoice Qty</th>
+                    <th>Invoice Amount</th>
+                    <th>Status</th>
+                    <th>ERP Ref No.</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200001</a></td>
+                    <td>08/02/2022</td>
+                    <td>Gautam Foods</td>
+                    <td>11</td>
+                    <td>25257.25</td>
+                    <td>5</td>
+                    <td>25257.25</td>
+                    <td>Waiting for approval</td>
+                    <td>11021</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200002</a></td>
+                    <td>09/02/2022</td>
+                    <td>Gautam Foods</td>
+                    <td>15</td>
+                    <td>14525.25</td>
+                    <td>4</td>
+                    <td>14525.25</td>
+                    <td>Waiting for approval</td>
+                    <td>00122</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200003</a></td>
+                    <td>10/02/2022</td>
+                    <td>Gautam Foods</td>
+                    <td>18</td>
+                    <td>36521.25</td>
+                    <td>1</td>
+                    <td>36521.25</td>
+                    <td>Waiting for approval</td>
+                    <td>00123</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200004</a></td>
+                    <td>11/02/2022</td>
+                    <td>Gautam Foods</td>
+                    <td>22</td>
+                    <td>12458.29</td>
+                    <td>3</td>
+                    <td>12458.29</td>
+                    <td>Waiting for approval</td>
+                    <td>00124</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200005</a></td>
+                    <td>12/02/2022</td>
+                    <td>Gautam Foods</td>
+                    <td>12</td>
+                    <td>15624.32</td>
+                    <td>6</td>
+                    <td>15624.32</td>
+                    <td>Waiting for approval</td>
+                    <td>00125</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200006</a></td>
+                    <td>13/02/2022</td>
+                    <td>SA Enterproses</td>
+                    <td>15</td>
+                    <td>19852.12</td>
+                    <td>8</td>
+                    <td>19852.12</td>
+                    <td>Approved</td>
+                    <td>00126</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200007</a></td>
+                    <td>14/02/2022</td>
+                    <td>SA Enterproses</td>
+                    <td>10</td>
+                    <td>11256.26</td>
+                    <td>2</td>
+                    <td>11256.26</td>
+                    <td>Approved</td>
+                    <td>00127</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200008</a></td>
+                    <td>15/02/2022</td>
+                    <td>SA Enterproses</td>
+                    <td>25</td>
+                    <td>17852.96</td>
+                    <td>3</td>
+                    <td>17852.96</td>
+                    <td>Approved</td>
+                    <td>00128</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200009</a></td>
+                    <td>16/02/2022</td>
+                    <td>SA Enterproses</td>
+                    <td>24</td>
+                    <td>21458.11</td>
+                    <td>5</td>
+                    <td>21458.11</td>
+                    <td>Approved</td>
+                    <td>00129</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#vieworderpop" data-toggle="modal" data-tooltip="tooltip" title="View Order">2022200010</a></td>
+                    <td>17/02/2022</td>
+                    <td>SA Enterproses</td>
+                    <td>13</td>
+                    <td>25412.36</td>
+                    <td>7</td>
+                    <td>25412.36</td>
+                    <td>Approved</td>
+                    <td>00130</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal bd-example-modal-lg fade" id="vieworderpop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Line Items Details</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+      </div>
+      <div class="modal-body">
+        <div class="row bg-info-light m-0">
+          <div class="col-md-4">
+            <label class="font-weight-bold my-2">Order No:</label>
+            202220000214 </div>
+          <div class="col-md-4">
+            <label class="font-weight-bold my-2">Order Date:</label>
+            08/02/2022 </div>
+          <div class="col-md-4">
+            <label class="font-weight-bold my-2">Distributor:</label>
+            Gautam Foods </div>
+        </div>
+        <div class="table-responsive">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table tableDash table-striped no-border linkUnd table-hover" id="dataTables1">
+            <thead>
+              <tr>
+                <th style="min-width:100px">Parent Item Code</th>
+                <th style="min-width:100px">Item Code</th>
+                <th style="min-width:280px">Item Desc</th>
+                <th>Item Price</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Order Amount</th>
+                <th>Invoice Qty</th>
+                <th>Invoice Amount</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th class="text-danger font-weight-bold">Total</th>
+                <th class="text-danger font-weight-bold">555.00</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>PFG-8111007</td>
+                <td>FG-411228</td>
+                <td>Weikfield-Pasta-Penne-Pouch-24x500gm</td>
+                <td class="p-1">100.50</td>
+                <td><input type="number" class="qty-ctl" step="1" value="3" /></td>
+                <td>Case</td>
+                <td>100.50</td>
+                <td>0.00</td>
+                <td>0.00</td>
+              </tr>
+              <tr>
+                <td>PFG-8111007</td>
+                <td>FG-411228</td>
+                <td>Weikfield Pasta Penne Pouch 24x400gm</td>
+                <td class="p-1">100.50</td>
+                <td><input type="number" class="qty-ctl" step="1" value="3" /></td>
+                <td>Case</td>
+                <td>100.50</td>
+                <td>0.00</td>
+                <td>0.00</td>
+              </tr>
+              <tr>
+                <td>PFG-8111007</td>
+                <td>FG-411228</td>
+                <td>Weikfield Pasta Penne Pouch 24x200gm</td>
+                <td class="p-1">100.50</td>
+                <td><input type="number" class="qty-ctl" step="1" value="3" /></td>
+                <td>Case</td>
+                <td>100.50</td>
+                <td>0.00</td>
+                <td>0.00</td>
+              </tr>
+              <tr>
+                <td>PFG-8111007</td>
+                <td>FG-411228</td>
+                <td>Weikfield Pasta Penne Pouch 24x100gm</td>
+                <td class="p-1">100.50</td>
+                <td><input type="number" class="qty-ctl" step="1" value="3" /></td>
+                <td>Case</td>
+                <td>100.50</td>
+                <td>0.00</td>
+                <td>0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+      	<button type="submit" class="btn btn-primary  btn-md"><i class="fa-solid fa-check mr-2"></i> Accept</button>
+        <button type="reset" class="btn btn-danger btn-md"><i class="fa-solid fa-xmark mr-2"></i> Reject</button>
+        <button type="submit" class="btn btn-primary  btn-md" onclick="window.location='PlaceOrder.html'"><i class="fa-solid fa-pen mr-2"></i> Edit Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap core JavaScript--> 
+<script src="vendor/jquery/jquery.min.js"></script> 
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
+<script src="vendor/datatables/jquery.dataTables.js"></script> 
+<script src="vendor/datatables/dataTables.bootstrap4.js"></script> 
+<script src="js/sb-admin.min.js"></script> 
+<script src="js/sb-admin-datatables.min.js"></script> 
+<script src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/loader.js"></script> 
+<script>
+$('[data-tooltip="tooltip"]').tooltip();
+</script> 
+<script>
+$(document).ready(function() {
+$("#dataTables1").dataTable({
+		"ordering": false,
+        "info":     false,
+		"searching": false,
+		"lengthChange": false,
+		"paging": false
+});
+
+	$( function() {
+		$( ".datepicker" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+	});
+	$(function () {
+		var url = window.location.pathname,
+		urlRegExp = new RegExp(url.replace(/\/$/, '') + "$");  
+		$('.nav-item a').each(function () {
+			 if (urlRegExp.test(this.href.replace(/\/$/, ''))) {
+				$(this).parent("li").addClass('active');
+			}
+		});
+	});
+});
+</script> 
+<script src="js/jquery-ui.js"></script>
+</body>
+</html>
